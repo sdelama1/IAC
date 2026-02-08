@@ -1,4 +1,3 @@
-git switch develop# S3 Gateway Endpoint (Sin costo, acceso directo a buckets)
 resource "aws_vpc_endpoint" "s3" {
   vpc_id            = aws_vpc.main.id
   service_name      = "com.amazonaws.us-east-1.s3"
@@ -14,7 +13,6 @@ resource "aws_vpc_endpoint" "s3" {
   }
 }
 
-# Secrets Manager Interface Endpoint
 resource "aws_vpc_endpoint" "secretsmanager" {
   vpc_id              = aws_vpc.main.id
   service_name        = "com.amazonaws.us-east-1.secretsmanager"
@@ -29,7 +27,6 @@ resource "aws_vpc_endpoint" "secretsmanager" {
   }
 }
 
-# SNS Interface Endpoint
 resource "aws_vpc_endpoint" "sns" {
   vpc_id              = aws_vpc.main.id
   service_name        = "com.amazonaws.us-east-1.sns"
@@ -44,7 +41,6 @@ resource "aws_vpc_endpoint" "sns" {
   }
 }
 
-# SQS Interface Endpoint
 resource "aws_vpc_endpoint" "sqs" {
   vpc_id              = aws_vpc.main.id
   service_name        = "com.amazonaws.us-east-1.sqs"
@@ -59,7 +55,6 @@ resource "aws_vpc_endpoint" "sqs" {
   }
 }
 
-# CloudWatch Logs Interface Endpoint
 resource "aws_vpc_endpoint" "logs" {
   vpc_id              = aws_vpc.main.id
   service_name        = "com.amazonaws.us-east-1.logs"
